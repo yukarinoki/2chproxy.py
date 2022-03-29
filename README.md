@@ -5,6 +5,8 @@ Sikiに対して動作する
 2chproxy.plのほとんどの条件処理をすっ飛ばしている。
 CONNECTと5chのread.cgi->dat変換のみ実装
 
+*バグだらけなので適当に直して使ってください*
+
 ##  経緯
 2chproxy.pl  
 https://github.com/yama-natuki/2chproxy.pl  
