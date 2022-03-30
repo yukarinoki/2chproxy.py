@@ -4,8 +4,9 @@
 Sikiに対して動作する　  
 https://sikiapp.net/
 
-2chproxy.plのほとんどの条件処理をすっ飛ばしている
-CONNECTと5chのread.cgi->dat変換のみ実装　　  
+2chproxy.plのほとんどの条件処理をすっ飛ばしている  
+cgi-dat変換とCONNECTメソッド処理を実装している。  
+それで、5chを見る上では問題ない。
 
 ## 経緯
 
