@@ -22,7 +22,7 @@ def scraping(cgiurl):
     soup = BeautifulSoup(r.content, "html.parser")
     print(soup.select(".title"))
 
-    title = soup.select(".title")[0].text
+    title = soup.select(".title")[0].text.strip()
     posts = soup.select(".post")
 
     dat = ""
