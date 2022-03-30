@@ -29,23 +29,6 @@ class MyHTTPRequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(dat.encode('shift_jis', errors="replace"))
 
-    def do_POST(self):
-        print('path = {}'.format(self.path))
-
-        parsed_path = urlparse(self.path)
-        print('parsed: path = {}, query = {}'.format(parsed_path.path, parse_qs(parsed_path.query)))
-
-        print('headers\r\n-----\r\n{}-----'.format(self.headers))
-
-        content_length = int(self.headers['content-length'])
-        
-        print('body = {}'.format(self.rfile.read(content_length).decode('utf-8')))
-        
-        self.send_response(200)
-        self.send_header('Content-Type', 'text/plain; charset=utf-8')
-        self.end_headers()
-        self.wfile.write(b'Hello from do_POST')
-
     def do_CONNECT(self):
         logging.info('path = {}'.format(self.path))
 
@@ -75,8 +58,7 @@ class MyHTTPRequestHandler(BaseHTTPRequestHandler):
             for fno, ev in rdy:
                 if fno == self.rfile.fileno():
                     if ev == select.POLLIN:
-                        data = self.rfile.read1(8192)
-                        print(data)
+                        data = self.rfile.read1(8192)ß
                         dest_conn.send(data)
                     else:
                         fin = True
