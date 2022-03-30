@@ -58,7 +58,7 @@ class MyHTTPRequestHandler(BaseHTTPRequestHandler):
             for fno, ev in rdy:
                 if fno == self.rfile.fileno():
                     if ev == select.POLLIN:
-                        data = self.rfile.read1(8192)ß
+                        data = self.rfile.read1(8192)
                         dest_conn.send(data)
                     else:
                         fin = True
