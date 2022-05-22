@@ -1,37 +1,27 @@
-## Welcome to GitHub Pages
+# 2chproxy.py
+HTTP proxy for 2ch.net by python3. 2chproxy.py scrapes 2ch's http page and converts it to .dat format.
 
-You can use the [editor on GitHub](https://github.com/yukarinoki/2chproxy.py/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+2chproxy.plのpythonによる簡易実装  
+Sikiに対して動作する　  
+https://sikiapp.net/
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+2chproxy.plのほとんどの条件処理をすっ飛ばしている  
+cgi-dat変換とCONNECTメソッド処理を実装している。  
+それで、5chを見る上では問題ない。
 
-### Markdown
+## 経緯
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+2chproxy.pl  
+<https://github.com/yama-natuki/2chproxy.pl>  
+が自分のPC（M1Mac）上で動作しなかったので作った。  
+（板更新が動作しなかった。CONNECTメソッドを処理する部分に問題がある様子）
 
-```markdown
-Syntax highlighted code block
+## 動作
 
-# Header 1
-## Header 2
-### Header 3
+requests, beautifulsoup４を入れて　　
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```sh
+python server.py
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/yukarinoki/2chproxy.py/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+で、127.0.0.1:8080で動き始めます。　　
